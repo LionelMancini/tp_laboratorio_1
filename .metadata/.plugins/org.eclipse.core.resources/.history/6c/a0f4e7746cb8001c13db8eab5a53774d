@@ -1,0 +1,36 @@
+/*
+ * calculos.c
+ *
+ *  Created on: 9 abr. 2022
+ *      Author: Lio
+ */
+#define BITCOIN 4606954.55
+
+float CalculoTarjeta(float precio)
+{
+	float descuento;
+
+	descuento = precio * 0.1;
+	precio = precio - descuento;
+
+	return precio;
+}
+
+float CalculoTarjetaC(float precio)
+{
+	float descuento;
+	descuento = precio * 1.25;
+	precio = precio - descuento;
+
+	return precio;
+}
+
+float CalculoBitcoin(float precio)x
+{
+	float precioBitcoin;
+	precioBitcoin = precio / BITCOIN;
+
+	return precioBitcoin;
+}
+
+

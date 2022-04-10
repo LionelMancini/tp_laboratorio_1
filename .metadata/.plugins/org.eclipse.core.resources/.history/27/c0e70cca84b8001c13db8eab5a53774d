@@ -1,0 +1,99 @@
+/*
+ ============================================================================
+ Name        : TP_1.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "menuopciones.h"
+#include "calculos.h"
+#include "solicitarmostrardatos.h"
+
+#define EXIT 6
+
+int main(void) {
+	setbuf(stdout, NULL);
+	int opcion;
+	float x;
+	float y;
+	float z;
+	float debitoAerolineas;
+	float creditoAerolineas;
+	float bitcoinAerolineas;
+	float unitarioAerolineas;
+	float debitoLATAM;
+	float creditoLATAM;
+	float bitcoinLATAM;
+	float unitarioLATAM;
+	float costoCredito;
+	int banderaA;
+	int banderaB;
+	int banderaResultados;
+
+	banderaA= 0;
+	banderaB= 0;
+	banderaResultados=0;
+
+	do{
+
+		opcion = MenuOpciones( x, y ,z );
+
+		switch(opcion)
+		{
+			case 1:
+				x = IngresarKMS("Ingrese cantidad de kilometros:");
+				banderaA=1;
+			break;
+			case 2:
+				y= IngresarPrecioVuelo("Ingrese precio del vuelo de Aerolineas:");
+				z= IngresarPrecioVuelo("Ingrese precio del vuelo de LATAM:");
+				banderaB=1;
+			break;
+			case 3:
+				if(banderaA == 0)
+				{
+					printf("ERROR! Por favor primero ejecute la opción de carga de los kilometros");
+				}
+				else if( banderaB == 0)
+				{
+					printf("ERROR! Por favor primero ejecute la opción de carga de los precios de los vuelos");
+				}
+				else
+				{
+					debitoAerolineas = CalculoTarjeta(y);
+					creditoAerolineas = CalculoTarjetaC(y);
+					bitcoinAerolineas= CalculoBitcoin(y);
+					unitarioAerolineas= CalculoUnitario(y);
+					debitoLATAM= CalculoTarjeta(z);
+					creditoLATAM= CalculoTarjetaC(z);
+					bitcoinLATAM= CalculoBitcoin(z);
+					unitarioLATAM=  CalculoUnitario(z);
+					printf("--------------------------------\n");
+				    printf("YA SE REALIZARON LAS OPERACIONES\n");
+				    printf("--------------------------------\n");
+				    banderaResultados=1;
+				}
+			break;
+			case 4:
+				if(banderaResultados == 0)
+				{
+					printf("Por favor, primero calcule las operaciones antes de mostrar los resultados\n");
+				}
+				else
+				{
+					MostrarResultados(x, y, debitoAerolineas, creditoAerolineas, bitcoinAerolineas, unitarioAerolineas, debitoLATAM, creditoLATAM, bitcoinLATAM, unitarioLATAM );
+
+				}
+		}
+
+
+	}while(opcion != EXIT);
+
+
+	return EXIT_SUCCESS;
+}

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;TP_1/src/solicitardatos.c&apos; to &apos;solicitamostrardatos.c&apos;" description="Rename resource &apos;solicitardatos.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/solicitardatos.c" name="solicitamostrardatos.c" stamp="1649559136298" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;TP_1/src/solicitardatos.h&apos; to &apos;solicitarmostrardatos.h&apos;" description="Rename resource &apos;solicitardatos.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/solicitardatos.h" name="solicitarmostrardatos.h" stamp="1649559146431" updateReferences="true"/>
+</session>
