@@ -7,7 +7,6 @@
 
 #include "ArrayPassenger.h"
 static int ePassenger_GiveID(void);
-static int ePassenger_FreeIndex(ePassenger* list, int len);
 static void ePassenger_ShowOne(ePassenger Passenger);
 static float ePassenger_CalculateCosts (ePassenger* list, int len);
 static int ePassenger_Counter(ePassenger* list, int len);
@@ -19,24 +18,6 @@ static int ePassenger_GiveID(void) {
 	static int Passenger_idIncremental = 0;
 	return Passenger_idIncremental++;
 }
-
-static int ePassenger_FreeIndex(ePassenger* list, int len)
-{
-	int rtn = -1;
-	int i;
-
-	if (list != NULL && len > 0) {
-		for (i = 0; i < len; i++) {
-			if (list[i].isEmpty == LIBRE) {
-				rtn = i;
-				break;
-			}
-		}
-	}
-
-	return rtn;
-}
-
 
 int initPassengers(ePassenger* list, int len)
 {
@@ -110,43 +91,12 @@ int printPassenger(ePassenger* list, int len) {
 	return rtn;
 }
 
-int ePassenger_ShowDown(ePassenger list[], int len) {
-	int i;
-	int rtn = 0;
-	int cantidad = 0;
-
-	//CABECERA
-	puts("\t> Passenger\n");
-	printf("|________|_____________|_____________|___________|______________|________________|_______________|\n");
-
-	//SI EXISTE EL list Y EL LIMITE ES VALidO
-	if (list != NULL && len > 0) {
-		//RECORRO TODO EL list
-		for (i = 0; i < len; i++) {
-			//PREGUNTO POR SU ESTADO "BAJA"
-			if (list[i].isEmpty != BAJA) {
-				//MUESTRO UN SOLO Passenger
-				ePassenger_ShowOne(list[i]);
-				//CONTADOR DE Passenger
-				cantidad++;
-			}
-		}
-	}
-
-	//SI CANTidAD == 0 - NO HUBO Passenger PARA MOSTRAR (list SIN BAJAS)
-	if (cantidad > 0) {
-		rtn = 0;
-	}
-
-	return rtn;
-}
-
 int addPassenger(ePassenger* list, int len, int id, char name[],char lastName[],float price,int typePassenger, char flyCode[], int statusFlight)
 {
 	int rtn = -1;
 	ePassenger Passenger;
 
-	int index = ePassenger_FreeIndex(list, len);
+	int index = initPassengers(list, len);
 
 	if(list != NULL && len > 0 && id >= 0 && name != NULL && lastName != NULL && price > 0 && typePassenger > 0 && flyCode != NULL && statusFlight > 0){
 		//COPIA ID DEL AUX AL PASAJERO NUEVO
@@ -184,18 +134,18 @@ int chargePassenger(ePassenger* list,int len)
 		//SETEO ID UNICO - VARIABLE ESTATICA AUTOINCREMENTAL
 		auxPassenger.id = ePassenger_GiveID();
 		//PIDO AL USUARIO QUE INGRESE SUS DATOS
-
-		if(utn_getString("\nIngrese nombre del pasajero:", "ERROR, el nombre ingresado no es valido.", 2,51, auxPassenger.name)==1)
+		if(utn_getString("\nIngrese nombre del pasajero:", "ERROR, el nombre ingresado no es valido.", 2,51, auxPassenger.name)!=0)
 		{
-			if(utn_getString("\nIngrese apellido del pasajero:", "ERROR, el apellido ingresado no es valido", 2, 51, auxPassenger.lastName)==1)
+
+			if(utn_getString("\nIngrese apellido del pasajero:", "ERROR, el apellido ingresado no es valido", 2, 51, auxPassenger.lastName)!=0)
 			{
-				if(utn_getNumeroFlotante ("\nIngrese el precio del pasaje (25000-500000):", 2, 25000, 500000, "ERROR, el monto ingresado no es valido. Por favor reingrese el monto (25000-500000).", &auxPassenger.price) == 1)
+				if(utn_getNumeroFlotante ("\nIngrese el precio del pasaje (25000-500000):", 2, 25000, 500000, "ERROR, el monto ingresado no es valido. Por favor reingrese el monto (25000-500000).", &auxPassenger.price)!=0)
 				{
-					if(utn_getNumero("\nTipo de pasaje (1- Primera Clase | 2- Ejecutivo | 3- Turista):", 2, 1,3, "ERROR por favor reingrese su tipo de pasaje", &auxPassenger.typePassenger) == 1)
+					if(utn_getNumero("\nTipo de pasaje (1- Primera Clase | 2- Ejecutivo | 3- Turista):", 2, 1,3, "ERROR por favor reingrese su tipo de pasaje", &auxPassenger.typePassenger) !=0)
 					{
-						if(utn_getStringNumber("\nPor favor ingrese el codigo de vuelo:", "\nERROR en el codigo de vuelo. Por favor reingrese el codigo de vuelo:", 10, auxPassenger.flyCode) == 1)
+						if(utn_getStringNumber("\nPor favor ingrese el codigo de vuelo:", "\nERROR en el codigo de vuelo. Por favor reingrese el codigo de vuelo:", 10, auxPassenger.flyCode)!=0)
 						{
-							if(utn_getNumero("\nEstado de vuelo (1-ACTIVO | 2- DEMORADO | 3- CANCELADO | 4- REPROGRAMADO):", 2, 1, 4, "ERROR el numero ingresado no corresponde a un pasaje", &auxPassenger.statusFlight)==1)
+							if(utn_getNumero("\nEstado de vuelo (1-ACTIVO | 2- DEMORADO | 3- CANCELADO | 4- REPROGRAMADO):", 2, 1, 4, "ERROR el numero ingresado no corresponde a un pasaje", &auxPassenger.statusFlight)!=0)
 							{
 								// LLAMO A LA FUNCION PARA CARGAR EL PASAJERO NUEVO
 								addPassenger(list, len, auxPassenger.id, auxPassenger.name, auxPassenger.lastName, auxPassenger.price, auxPassenger.typePassenger,auxPassenger.flyCode, auxPassenger.statusFlight);
@@ -233,12 +183,8 @@ int removePassenger(ePassenger* list, int len, int id){
 			//VALIDO QUE EL ID EXISTA Y ESTE OCUPADO
 			if(index >= 0 && index < len && list[index].isEmpty == OCUPADO)
 			{
-				//MENSAJE DE CONFIRMACION
-				//if(ValidateSN("Desea ejecutar la opcion de borrar este id del sistema? Presione 's' en caso afirmativo o 'n' en caso contrario") == 0)
-				//{
-				//BAJA ACEPTADA - CAMBIO ESTADO A "BAJA"
 				list[index].isEmpty = BAJA;
-				//RETORNO 1 SI SE DIO DE BAJA CORRECTAMENTE
+				//RETORNO 0 SI SE DIO DE BAJA CORRECTAMENTE
 				rtn = 0;
 			}
 			else

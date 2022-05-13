@@ -106,7 +106,7 @@ int main(void) {
 				}
 				break;
 			case 5:
-				if(ePassenger_HarcodeData (arrayPassenger , MAXPASSENGER ) !=-1)
+				/*if(ePassenger_HarcodeData (arrayPassenger , MAXPASSENGER ) !=-1)
 				{
 					puts("SE HA HARCODEADO\n");
 					banderaA=1;
@@ -114,7 +114,7 @@ int main(void) {
 				else
 				{
 					printf("Ha habido un error en el Harcodeo\n");
-				}
+				}*/
 				break;
 			case 6:
 				printf("-------------------------\n");

@@ -262,7 +262,7 @@ int esNombre(char* cadena,int longitud)
 		for(i=0 ; cadena[i] != '\0' && i < longitud; i++)
 		{
 			if((cadena[i] < 'A' || cadena[i] > 'Z' ) &&
-					(cadena[i] < 'a' || cadena[i] > 'z' ))
+					(cadena[i] < 'a' || cadena[i] > 'z' ) && (cadena[i]  < '0' || cadena[i] > '9'))
 			{
 				retorno = 0;
 				break;
@@ -299,7 +299,7 @@ int utn_getString(char* mensaje, char* mensajeError, int reintentos,  int longit
 int utn_getStringNumber(char* mensaje, char* mensajeError, int longitud, char *pResultado)
 {
 	char bufferString[50];
-	int retorno = -1;
+	int retorno = 0;
 
 	if(mensaje !=NULL && mensajeError != NULL && longitud >0 && pResultado != NULL)
 	{
@@ -307,7 +307,7 @@ int utn_getStringNumber(char* mensaje, char* mensajeError, int longitud, char *p
 		if(getStringNumber(bufferString,sizeof(bufferString)) == 0  &&	strnlen(bufferString,sizeof(bufferString)) < longitud)
 		{
 			strncpy(pResultado,bufferString,longitud);
-			retorno = 0;
+			retorno = 1;
 		}
 	}
 	return retorno;

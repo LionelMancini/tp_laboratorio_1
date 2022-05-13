@@ -1,7 +1,1 @@
-15:34:58 **** Incremental Build of configuration Debug for project TP_1 ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\calculos.o" "..\\src\\calculos.c" 
-gcc -o TP_1.exe "src\\TP_1.o" "src\\calculos.o" "src\\menuopciones.o" "src\\solicitamostrardatos.o" 
-
-15:34:58 Build Finished. 0 errors, 0 warnings. (took 261ms)
-
+Info: Nothing to build for TP_1
