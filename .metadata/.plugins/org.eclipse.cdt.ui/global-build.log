@@ -1,95 +1,86 @@
-Info: Nothing to build for TP_[2]
-Info: Nothing to build for TP_[2]
-Info: Nothing to build for TP_[2]
-Info: Nothing to build for TP_[2]
-17:23:53 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_[2].o" "..\\src\\TP_[2].c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-Info: Nothing to build for TP_[2]
-17:29:39 **** Incremental Build of configuration Debug for project TP_[2] ****
+20:12:18 **** Rebuild of configuration Debug for project TP_[2] ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
 ..\src\ArrayPassenger.c: In function 'addPassenger':
-..\src\ArrayPassenger.c:99:14: warning: implicit declaration of function 'ePassenger_FreeIndex' [-Wimplicit-function-declaration]
-  int index = ePassenger_FreeIndex(list, len);
-              ^~~~~~~~~~~~~~~~~~~~
+..\src\ArrayPassenger.c:134:6: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+ (list, len);
+      ^
+..\src\ArrayPassenger.c:134:1: warning: statement with no effect [-Wunused-value]
+ (list, len);
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_[2].o" "..\\src\\TP_[2].c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\FuncionesMenu.o" "..\\src\\FuncionesMenu.c" 
 gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-src\ArrayPassenger.o: In function `addPassenger':
-C:\Users\Lio\tp_laboratorio_1\TP_[2]\Debug/../src/ArrayPassenger.c:99: undefined reference to `ePassenger_FreeIndex'
-collect2.exe: error: ld returned 1 exit status
-17:29:53 **** Incremental Build of configuration Debug for project TP_[2] ****
+20:12:47 **** Incremental Build of configuration Debug for project TP_[2] ****
 Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:17:40 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:17:57 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:18:29 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:18:48 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:19:15 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:19:37 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:19:51 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:19:59 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:20:26 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:20:37 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:20:53 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:21:03 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:21:13 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:27:54 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_[2].o" "..\\src\\TP_[2].c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
+20:29:58 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_[2].o" "..\\src\\TP_[2].c" 
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
 gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
 Info: Nothing to build for TP_[2]
-17:30:45 **** Incremental Build of configuration Debug for project TP_[2] ****
+20:31:33 **** Incremental Build of configuration Debug for project TP_[2] ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_[2].o" "..\\src\\TP_[2].c" 
 gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:32:00 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:33:01 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:33:51 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:35:14 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:36:45 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:37:23 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:38:39 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:41:06 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:42:38 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-Info: Nothing to build for TP_[2]
-17:44:32 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:46:31 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:47:01 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:47:42 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:48:12 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-17:48:39 **** Incremental Build of configuration Debug for project TP_[2] ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Bibloteca1.0.o" "..\\src\\Bibloteca1.0.c" 
-gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\Bibloteca1.0.o" "src\\FuncionesMenu.o" "src\\TP_[2].o" 
-Info: Nothing to build for TP_[2]

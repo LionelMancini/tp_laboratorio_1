@@ -22,7 +22,8 @@ int main(void) {
 	int auxID;
 	int auxOrder;
 	int opcionMostrar;
-	int banderaA;
+	int banderaA=0;
+	int banderaB=0;
 	ePassenger arrayPassenger[MAXPASSENGER];
 
 	initPassengers(arrayPassenger, MAXPASSENGER);
@@ -42,14 +43,22 @@ int main(void) {
 			switch(opcion)
 			{
 			case 1:
-				if(chargePassenger(arrayPassenger, MAXPASSENGER) != -1)
+				if(banderaB==0)
 				{
-					puts("SE HA DADO DE ALTA EXITOSAMENTE");
-					banderaA=1;
+					if(chargePassenger(arrayPassenger, MAXPASSENGER) != -1)
+					{
+						puts("SE HA DADO DE ALTA EXITOSAMENTE");
+						banderaA=1;
+						banderaB=1;
+					}
+					else
+					{
+						printf("Hubo un error en la ALTA\n");
+					}
 				}
 				else
 				{
-					printf("Hubo un error en la ALTA\n");
+					puts("No se puede cargar un ALTA si previamente se hardcodeo");
 				}
 				break;
 			case 2:
@@ -106,15 +115,23 @@ int main(void) {
 				}
 				break;
 			case 5:
-				/*if(ePassenger_HarcodeData (arrayPassenger , MAXPASSENGER ) !=-1)
+				if(banderaB==0)
 				{
-					puts("SE HA HARCODEADO\n");
-					banderaA=1;
+					if(ePassenger_HarcodeData (arrayPassenger , MAXPASSENGER ) !=-1)
+					{
+						puts("SE HA HARCODEADO\n");
+						banderaA=1;
+						banderaB=1;
+					}
+					else
+					{
+						printf("Ha habido un error en el Harcodeo\n");
+					}
 				}
 				else
 				{
-					printf("Ha habido un error en el Harcodeo\n");
-				}*/
+					puts("No se puede hardcodear luego de ingresar un alta o volver a hardcodear!");
+				}
 				break;
 			case 6:
 				printf("-------------------------\n");

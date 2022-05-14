@@ -262,7 +262,7 @@ int esNombre(char* cadena,int longitud)
 		for(i=0 ; cadena[i] != '\0' && i < longitud; i++)
 		{
 			if((cadena[i] < 'A' || cadena[i] > 'Z' ) &&
-					(cadena[i] < 'a' || cadena[i] > 'z' ) && (cadena[i]  < '0' || cadena[i] > '9'))
+					(cadena[i] < 'a' || cadena[i] > 'z' ))
 			{
 				retorno = 0;
 				break;

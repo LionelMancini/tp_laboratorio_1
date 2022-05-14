@@ -8,6 +8,7 @@
 #include "ArrayPassenger.h"
 static int ePassenger_GiveID(void);
 static void ePassenger_ShowOne(ePassenger Passenger);
+static int ePassenger_FreeIndex(ePassenger* list, int len);
 static float ePassenger_CalculateCosts (ePassenger* list, int len);
 static int ePassenger_Counter(ePassenger* list, int len);
 static int ePassenger_AverageCost(float totalPasajes,int totalPasajeros);
@@ -36,6 +37,24 @@ int initPassengers(ePassenger* list, int len)
 	return rtn;
 }
 
+static int ePassenger_FreeIndex(ePassenger* list, int len)
+{
+	int rtn = -1;
+	int i;
+
+	if (list != NULL && len > 0) {
+		for (i = 0; i < len; i++) {
+			if (list[i].isEmpty == LIBRE) {
+				rtn = i;
+				break;
+			}
+		}
+	}
+
+	return rtn;
+}
+
+
 int findPassengerbyId(ePassenger* list, int len, int id){
 	int rtn = -1;
 	int i;
@@ -59,7 +78,7 @@ int findPassengerbyId(ePassenger* list, int len, int id){
 
 static void ePassenger_ShowOne(ePassenger Passenger) {
 
-	printf("|  ID:%2d  |  NAME:%4s | LASTNAME:%4s | PRICE:%.2f | FLYCODE: %4s  | TYPE: %1d | STATUS:%1d | \n", Passenger.id, Passenger.name, Passenger.lastName, Passenger.price, Passenger.flyCode, Passenger.typePassenger, Passenger.statusFlight);
+	printf("|  ID:%2d  |  NAME:%-10s | LASTNAME:%-10s | PRICE:%-10.2f | FLYCODE: %-7s  | TYPE: %1d | STATUS:%1d | \n", Passenger.id, Passenger.name, Passenger.lastName, Passenger.price, Passenger.flyCode, Passenger.typePassenger, Passenger.statusFlight);
 
 }
 
@@ -71,7 +90,7 @@ int printPassenger(ePassenger* list, int len) {
 	//SI EXISTE EL list Y EL LIMITE ES VALidO
 	if (list != NULL && len > 0) {
 		//RECORRO TODO EL list
-		printf("\nListado de pasajeros\n");
+		printf("\nPASAJEROS\n");
 		for (i = 0; i < len; i++) {
 			//PREGUNTO POR SU ESTADO "OCUPADO"
 			if (list[i].isEmpty == OCUPADO ) {;
@@ -96,7 +115,7 @@ int addPassenger(ePassenger* list, int len, int id, char name[],char lastName[],
 	int rtn = -1;
 	ePassenger Passenger;
 
-	int index = initPassengers(list, len);
+	int index = ePassenger_FreeIndex(list, len);
 
 	if(list != NULL && len > 0 && id >= 0 && name != NULL && lastName != NULL && price > 0 && typePassenger > 0 && flyCode != NULL && statusFlight > 0){
 		//COPIA ID DEL AUX AL PASAJERO NUEVO
@@ -452,6 +471,7 @@ int ePassenger_HarcodeData (ePassenger* list, int len)
 			}
 		}*/
 
+
 	if(addPassenger(list , len,1,"Abercio","Mansinelli",100000.20,1,"RYR6375",1)==0)
 	{
 		if(addPassenger(list , len,2,"Adonai","Eufrathes", 120000.32,3,"LGL7585",2)==0)
@@ -468,7 +488,6 @@ int ePassenger_HarcodeData (ePassenger* list, int len)
 			}
 		}
 	}
-
 
 	/*{
 	int rtn = -1;
@@ -518,71 +537,71 @@ int ePassenger_HarcodeData (ePassenger* list, int len)
 	return rtn;
 }
 
-	static float ePassenger_CalculateCosts (ePassenger* list, int len)
-	{
-		int acumuladorPasajes;
-		int i;
+static float ePassenger_CalculateCosts (ePassenger* list, int len)
+{
+	int acumuladorPasajes;
+	int i;
 
-		if(list != NULL && len>0)
+	if(list != NULL && len>0)
+	{
+		for(i=0;i<len;i++)
 		{
-			for(i=0;i<len;i++)
+			if(list[i].isEmpty == OCUPADO && list[i].price > 0)
 			{
-				if(list[i].isEmpty == OCUPADO && list[i].price > 0)
-				{
-					acumuladorPasajes += list[i].price;
-				}
+				acumuladorPasajes += list[i].price;
 			}
 		}
-
-		return acumuladorPasajes;
 	}
 
-	static int ePassenger_Counter(ePassenger* list, int len)
-	{
-		float acumuladorPasajeros;
-		int i;
+	return acumuladorPasajes;
+}
 
-		if(list != NULL && len>0)
+static int ePassenger_Counter(ePassenger* list, int len)
+{
+	float acumuladorPasajeros;
+	int i;
+
+	if(list != NULL && len>0)
+	{
+		for(i=0;i<len;i++)
 		{
-			for(i=0;i<len;i++)
+			if(list[i].isEmpty == OCUPADO && list[i].price > 0)
 			{
-				if(list[i].isEmpty == OCUPADO && list[i].price > 0)
-				{
-					acumuladorPasajeros ++;
-				}
+				acumuladorPasajeros ++;
 			}
 		}
-
-		return acumuladorPasajeros;
 	}
 
-	static int ePassenger_AverageCost(float totalPasajes,int totalPasajeros)
-	{
-		int promedioPasaje;
+	return acumuladorPasajeros;
+}
 
-		if(totalPasajes>0 && totalPasajeros>0)
-		{
-			promedioPasaje = totalPasajes / totalPasajeros;
-		}
-		return promedioPasaje;
+static int ePassenger_AverageCost(float totalPasajes,int totalPasajeros)
+{
+	int promedioPasaje;
+
+	if(totalPasajes>0 && totalPasajeros>0)
+	{
+		promedioPasaje = totalPasajes / totalPasajeros;
 	}
+	return promedioPasaje;
+}
 
-	static int ePassenger_MoreAvgCost(ePassenger* list, int len,float promedio)
+static int ePassenger_MoreAvgCost(ePassenger* list, int len,float promedio)
+{
+	int mayorAlPromedio=0;
+	int i;
+
+	if(list != NULL && len > 0 && promedio>0)
 	{
-		int mayorAlPromedio=0;
-		int i;
-
-		if(list != NULL && len > 0 && promedio>0)
+		for(i=0; i<len;i++)
 		{
-			for(i=0; i<len;i++)
+			if(list[i].isEmpty == OCUPADO && list[i].price > promedio)
 			{
-				if(list[i].isEmpty == OCUPADO && list[i].price > promedio)
-				{
-					mayorAlPromedio++;
-				}
+				mayorAlPromedio++;
 			}
 		}
-
-		return mayorAlPromedio;
-
 	}
+
+	return mayorAlPromedio;
+
+}
