@@ -9,7 +9,6 @@
 #define ARRAYPASSENGER_H_
 
 #include "Bibloteca1.0.h"
-#include "FuncionesMenu.h"
 #define LIBRE 0
 #define OCUPADO 1
 #define BAJA -1
@@ -120,20 +119,39 @@ int sortPassengersByCode (ePassenger* list, int len, int order);
 */
 int modifyPassenger(ePassenger* list, int len);
 
-/** \brief
- *
- * \param list Passenger*: Pointer to array of passenger
- * \param len int: array length
- * \return rtn int:(-1) if Error [Invalid length or NULL pointer] - (0) if Ok.
- */
-int printPricePassenger (ePassenger* list, int len);
-
 /** \brief Calculates the average price of the tickets and then shows the number of passengers with a ticket higher than the average
  *
  * \param list Passenger*: Pointer to array of passenger
  * \param len int: array length
  * \return rtn int:(-1) if Error [Invalid length or NULL pointer] - (0) if Ok.
  */
+
+int printPricePassenger (ePassenger* list, int len);
+
+/** \brief Charge the array with hardcode data.
+ *
+ * \param list Passenger*: Pointer to array of passenger
+ * \param len int: array length
+ * \return rtn int:(-1) if Error [Invalid length or NULL pointer] - (0) if Ok.
+ */
+
 int ePassenger_HarcodeData (ePassenger* list, int len);
+
+/// @fn void OpcionesMenu()
+/// @brief Displays the options menu for the main program
+///
+void OpcionesMenu();
+
+/// @fn void OpcionesMenu2()
+/// @brief Display the options menu for passenger modification
+///
+void OpcionesMenu2();
+
+/// @fn void OpcionesMenu3()
+/// @brief Displays the options menu for the user to decide the criteria
+///
+void OpcionesMenu3();
+
+
 
 #endif /* ARRAYPASSENGER_H_ */

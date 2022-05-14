@@ -453,24 +453,6 @@ int printPricePassenger (ePassenger* list, int len)
 int ePassenger_HarcodeData (ePassenger* list, int len)
 {
 	int rtn = -1;
-	/*int i;
-	ePassenger HardCodePassengers[5] =
-	{
-			{0,	"Abercio","Mansinelli",100000.20,1,"RYR6375",1,OCUPADO},
-			{0,"Adonai","Eufrathes", 120000.32,3,"LGL7585",2,OCUPADO},
-			{0,"Faustino","Molinari", 190000.55,2,"RYR2917",3,OCUPADO},
-			{0,"Jan", "Fernandez", 350000.00,1,"EZY1065",1,OCUPADO},
-			{0,"Janet", "Dokwon", 72932.03,2,"AR9029",4,OCUPADO},
-	};
-
-	if(list != NULL && len>0)
-		{
-			for(i=0;i<len;i++)
-			{
-				addPassenger(list , len, HardCodePassengers.id[i] ,HardCodePassengers.name[i],HardCodePassengers.lastName[i],HardCodePassengers.price, HardCodePassengers.typePassenger,HardCodePassengers.flyCode,HardCodePassengers.statusFlight)
-			}
-		}*/
-
 
 	if(addPassenger(list , len,1,"Abercio","Mansinelli",100000.20,1,"RYR6375",1)==0)
 	{
@@ -488,51 +470,6 @@ int ePassenger_HarcodeData (ePassenger* list, int len)
 			}
 		}
 	}
-
-	/*{
-	int rtn = -1;
-	int i;
-	int index;
-
-	int id[15]={1,2,3,4,5,6,7,8,9,10, 20,40,80,96};
-	char name[15][15] = { "Abercio","Adonai", "Faustino","Feliciano","Jan","Janet","Lambert","Limber","Lusorio","Maialen","Mamertino","Maverick","Ajax","Bautista","Wilbur"};
-	char lastName[15][15]= {"Mansinelli","Eufrathes", "Molinari", "Fernandez", "Dokwon","Li", "Esthephen","Oufret","Giraldi", "Morales", "Centolli", "Paicedo" , "Uriburu", "Mancuello"};
-	float price[15]={ 100000.20, 120000.32, 190000.55, 350000.00, 72932.03, 90218.50, 88888.50, 99999.20, 66666.33, 55555.33, 33333.34, 488000.48, 92000.52, 928381.00,19072.90};
-	char flyCode[15][15]={"RYR6375","LGL7585","RYR2917","EZY1065","AR9029","EZS1411", "RYR9367","SN2585", "GLG1633", "LNE1415", "PP-PFR", "GLO1492", "QTR1365", "CRL773","THY409"};
-	int typePassenger[15]={1, 3, 2, 1, 2, 3, 3, 3, 3, 2, 1, 3, 3, 2, 1};
-	int statusFlight[15]={1, 2, 3, 1, 2, 4, 3, 4, 1, 1, 1, 2, 3, 2, 1};
-
-
-	if(list != NULL && len>0)
-	{
-		for(i=0;i<len;i++)
-		{
-			//BUSCO EL ID EN EL ARRAY PARA VER SI ESTA OCUPADO
-			index = findPassengerbyId(list, len, id[i]);
-			//SI ESTA OCUPADO ENTRO EN EL INDEX Y INCIALIZO DE NUEVO EN 0 EL ARRAY
-			if(index == -1)
-			{
-				index = initPassengers(list, len);
-			}
-			list[index].id = id[i];
-			//COPIA NOMBRE DEL HARCODEO AL ARRAY PRINCIPAL EN LA POSICION i
-			strcpy(list[index].name, name[i]);
-			//COPIA APELLIDO DEL HARCODEO AL ARRAY PRINCIPAL EN LA POSICION i
-			strcpy(list[index].lastName, lastName[i]);
-			//COPIA PRECIO DEL HARCODEO AL ARRAY PRINCIPAL EN LA POSICION i
-			list[index].price = price[i];
-			//COPIA EL TIPO DE PASAJERO INGRESADO EN EL HARCODEO AL ARRAY PRINCIPAL EN LA POSICION i
-			list[index].typePassenger = typePassenger[i];
-			//COPIA EL CODIGO DE VUELO INGRESADO EN EL HARCODEO AL ARRAY PRINCIPAL EN LA POSICION i
-			strcpy(list[index].flyCode, flyCode[i]);
-			//COPIA EL ESTADO DE VUELO INGRESADO EN EL HARCODEO AL ARRAY PRINCIPAL EN LA POSICION i
-			list[index].statusFlight  = statusFlight[i];
-			//CAMBIO SU ESTADO A "OCUPADO"
-			list[index].isEmpty = OCUPADO;
-			rtn = 0;
-
-		}
-	}*/
 
 	return rtn;
 }
@@ -604,4 +541,33 @@ static int ePassenger_MoreAvgCost(ePassenger* list, int len,float promedio)
 
 	return mayorAlPromedio;
 
+}
+
+void OpcionesMenu(){
+	printf("\n-----MENU AEROLINEA-----");
+	printf("\n 1. ALTA DE PASAJEROS    ");
+	printf("\n 2. MODIFICAR PASAJERO ");
+	printf("\n 3. ELIMINAR PASAJEROS ");
+	printf("\n 4. INFORMES PASAJEROS ");
+	printf("\n 5. HARDCODEO PASAJEROS");
+	printf("\n 6. SALIR DEL MENU     \n");
+
+}
+
+void OpcionesMenu2(){
+	printf("\n--ELIJA DATO A MODIFICAR:--\n");
+	printf("\n 1. NOMBRE DEL PASAJERO    \n");
+	printf("\n 2. APELLIDO DEL PASAJERO  \n");
+	printf("\n 3. PRECIO DEL VUELO       \n");
+	printf("\n 4. TIPO DE PASAJE         \n");
+	printf("\n 5. CODIGO DE VUELO        \n");
+	printf("\n 6. ESTADO DEL VUELO       \n");
+	printf("\n 7. SALIR DEL MENU         \n");
+}
+
+void OpcionesMenu3(){
+	printf("\n-------------------------------INFORMAR---------------------------------\n");
+	printf("\n 1. LISTADO DE PASAJEROS ORDENADOS ALFABETICAMENTE POR APELLIDO Y TIPO  \n");
+	printf("\n 2. TOTAL Y PROMEDIO DE PASAJES Y CUANTOS PASAJEROS SUPERAN EL PROMEDIO \n");
+	printf("\n 3. LISTADO DE PASAJEROS CON CODIGO DE VUELO Y ESTADO ACTIVO            \n");
 }
